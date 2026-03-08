@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huy Hoang Bio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif
+}
+
+body{
+height:100vh;
+background:#000814;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+/* nền sao */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:stars 120s linear infinite;
+opacity:.5;
+}
+
+@keyframes stars{
+from{transform:translateY(0)}
+to{transform:translateY(-1000px)}
+}
+
+.container{
+display:flex;
+gap:30px;
+z-index:2;
+}
+
+/* card */
+
+.card{
+background:#041020;
+padding:35px;
+border-radius:20px;
+width:420px;
+box-shadow:0 0 40px rgba(0,255,255,.15);
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:20px;
+margin-bottom:20px;
+}
+
+.avatar{
+width:110px;
+height:110px;
+border-radius:50%;
+background-image:url("avatar.png");
+background-size:cover;
+background-position:center;
+border:3px solid #00ffff;
+animation:avatarGlow 3s infinite alternate;
+}
+
+@keyframes avatarGlow{
+0%{
+box-shadow:0 0 10px #00ffff;
+transform:scale(1);
+}
+100%{
+box-shadow:0 0 35px #00ffff;
+transform:scale(1.05);
+}
+}
+
+.name{
+font-size:26px;
+font-weight:600;
+color:#00ffff;
+}
+
+.role{
+font-size:14px;
+opacity:.7;
+}
+
+.tags{
+margin-top:15px;
+font-size:14px;
+opacity:.8;
+}
+
+.btns{
+margin-top:20px;
+display:flex;
+gap:15px;
+}
+
+.btn{
+flex:1;
+padding:12px;
+border-radius:10px;
+background:transparent;
+border:1px solid #00ffff;
+color:#00ffff;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:#00ffff;
+color:black;
+}
+
+.panel{
+background:#041020;
+padding:35px;
+border-radius:20px;
+width:420px;
+box-shadow:0 0 40px rgba(0,255,255,.15);
+}
+
+.title{
+color:#00ffff;
+margin-bottom:15px;
+font-weight:600;
+font-size:20px;
+}
+
+.message{
+line-height:1.8;
+font-size:15px;
+opacity:.9;
+}
+
+footer{
+text-align:center;
+margin-top:20px;
+font-size:12px;
+opacity:.6;
+}
+
+/* anime chạy */
+
+.anime{
+position:fixed;
+bottom:0;
+left:-200px;
+width:160px;
+animation:run 15s linear infinite;
+z-index:1;
+}
+
+@keyframes run{
+0%{left:-200px}
+100%{left:110%}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="music" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<img class="anime" src="https://media.tenor.com/7D7I6dKQJb4AAAAi/anime-run.gif">
+
+<div class="container">
+
+<div class="card">
+
+<div class="profile">
+<div class="avatar"></div>
+
+<div>
+<div class="name">Huy Hoang</div>
+<div class="role">Developer • Web • Anime Lover</div>
+</div>
+</div>
+
+<div class="tags">
+📍 Viet Nam<br>
+💻 Coding • Design • Bio Web
+</div>
+
+<div class="btns">
+<button class="btn" onclick="toggleMusic()">🎵 Bật / Tắt Nhạc</button>
+<button class="btn">📩 Liên hệ</button>
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="title">Chúc mừng 8/3 💐</div>
+
+<div class="message">
+Chúc tất cả các bạn nữ một ngày <b>Quốc tế Phụ nữ 8/3</b> thật vui vẻ ❤️ <br><br>
+Luôn xinh đẹp, hạnh phúc, học tập tốt và gặp nhiều may mắn trong cuộc sống ✨ <br><br>
+Cảm ơn vì đã làm thế giới này trở nên tuyệt vời hơn 🌸
+</div>
+
+<footer>
+© 2026 Huy Hoang
+</footer>
+
+</div>
+
+</div>
+
+<script>
+
+const music=document.getElementById("music")
+
+function toggleMusic(){
+if(music.paused){
+music.play()
+}else{
+music.pause()
+}
+}
+
+</script>
+
+</body>
+</html>
